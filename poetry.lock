@@ -224,6 +224,15 @@ toml = ["toml"]
 
 [[package]]
 category = "main"
+description = "Manage Python errors with ease"
+marker = "python_version >= \"3.6\" and python_version < \"4.0\""
+name = "crashtest"
+optional = false
+python-versions = ">=3.6,<4.0"
+version = "0.3.0"
+
+[[package]]
+category = "main"
 description = "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
 marker = "python_version >= \"2.7\" and python_version < \"2.8\" and (sys_platform == \"linux2\" or sys_platform == \"linux\") or python_version >= \"3.5\" and python_version < \"4.0\" and sys_platform == \"linux\""
 name = "cryptography"
@@ -1100,7 +1109,7 @@ requests = ">=2.0.1,<3.0.0"
 [[package]]
 category = "main"
 description = "scandir, a better directory iterator and faster os.walk()"
-marker = "python_version >= \"2.7\" and python_version < \"2.8\""
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.5\" or python_version >= \"2.7\" and python_version < \"2.8\" and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.5\")"
 name = "scandir"
 optional = false
 python-versions = "*"
@@ -1358,7 +1367,7 @@ version = "0.2.1"
 [[package]]
 category = "main"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-marker = "python_version < \"3.8\" or python_version >= \"3.5\" and python_version < \"3.8\""
+marker = "python_version < \"3.8\" or python_version >= \"3.5\" and python_version < \"3.8\" or python_version >= \"3.5\" and python_version < \"3.7\""
 name = "zipp"
 optional = false
 python-versions = ">=2.7"
@@ -1374,7 +1383,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pathlib2", "unittest2", "jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "7ae766406ba58bc44d4b0d5876927ab0db9005d6a80efab83ddd6a2c50c2f8c8"
+content-hash = "3d906ba8e200dddba60f876f02cb00c5a8c56bda7dc70f0b3b2135132b5e3643"
 python-versions = "~2.7 || ^3.5"
 
 [metadata.files]
@@ -1504,6 +1513,10 @@ coverage = [
     {file = "coverage-5.0.4-cp39-cp39-win32.whl", hash = "sha256:7c9762f80a25d8d0e4ab3cb1af5d9dffbddb3ee5d21c43e3474c84bf5ff941f7"},
     {file = "coverage-5.0.4-cp39-cp39-win_amd64.whl", hash = "sha256:4482f69e0701139d0f2c44f3c395d1d1d37abd81bfafbf9b6efbe2542679d892"},
     {file = "coverage-5.0.4.tar.gz", hash = "sha256:1b60a95fc995649464e0cd48cecc8288bac5f4198f21d04b8229dc4097d76823"},
+]
+crashtest = [
+    {file = "crashtest-0.3.0-py3-none-any.whl", hash = "sha256:06069a9267c54be31c42b03574b72407bf780e13c82cb0238f24ea69cf25b6dd"},
+    {file = "crashtest-0.3.0.tar.gz", hash = "sha256:e9c06cc96400939ab5327123a3f699078eaad8a6283247d7b2ae0f6afffadf14"},
 ]
 cryptography = [
     {file = "cryptography-2.8-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:fb81c17e0ebe3358486cd8cc3ad78adbae58af12fc2bf2bc0bb84e8090fa5ce8"},
@@ -1652,11 +1665,6 @@ markupsafe = [
     {file = "MarkupSafe-1.1.1-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:ba59edeaa2fc6114428f1637ffff42da1e311e29382d81b339c1817d37ec93c6"},
     {file = "MarkupSafe-1.1.1-cp37-cp37m-win32.whl", hash = "sha256:b00c1de48212e4cc9603895652c5c410df699856a2853135b3967591e4beebc2"},
     {file = "MarkupSafe-1.1.1-cp37-cp37m-win_amd64.whl", hash = "sha256:9bf40443012702a1d2070043cb6291650a0841ece432556f784f004937f0f32c"},
-    {file = "MarkupSafe-1.1.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:6788b695d50a51edb699cb55e35487e430fa21f1ed838122d722e0ff0ac5ba15"},
-    {file = "MarkupSafe-1.1.1-cp38-cp38-manylinux1_i686.whl", hash = "sha256:cdb132fc825c38e1aeec2c8aa9338310d29d337bebbd7baa06889d09a60a1fa2"},
-    {file = "MarkupSafe-1.1.1-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:13d3144e1e340870b25e7b10b98d779608c02016d5184cfb9927a9f10c689f42"},
-    {file = "MarkupSafe-1.1.1-cp38-cp38-win32.whl", hash = "sha256:596510de112c685489095da617b5bcbbac7dd6384aeebeda4df6025d0256a81b"},
-    {file = "MarkupSafe-1.1.1-cp38-cp38-win_amd64.whl", hash = "sha256:e8313f01ba26fbbe36c7be1966a7b7424942f670f38e666995b88d012765b9be"},
     {file = "MarkupSafe-1.1.1.tar.gz", hash = "sha256:29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b"},
 ]
 mkdocs = [
