@@ -35,6 +35,9 @@ class Publisher:
         client_cert=None,
         dry_run=False,
     ):
+        # Set repository name to publish-default. It will be None if not set
+        repository_name = repository_name or self._package.publish_default
+
         if repository_name:
             self._io.write_line(
                 "Publishing <c1>{}</c1> (<c2>{}</c2>) "
